@@ -36,14 +36,33 @@ dependencies {
 ```
 ----
 
-###Geofences maken
+### Geofences maken
 
-Voor het creeren van een geofence is het ondrestaande stuk code 
-```Java
+Voor het creeren van een geofence is het ondrestaande stuk code. 
+```java
 Geofence geofence = new Geofence.Builder()
          .setRequestId("geofence id")
-         .setCircularRegion(51.9867038/**latitude*/,5.9510748 /**longitude*/, 100 /**radius*/)
-         .setExpirationDuration(3600000/**expiration duration in milliseconds*/)
-         .setTransitionTypes(1/**transition type, 1 on enter 2 on exit*/)
+         .setCircularRegion(51.9867038/*latitude*/,5.9510748 /*longitude*/, 100 /*radius*/)
+         .setExpirationDuration(3600000/*expiration duration in milliseconds*/)
+         .setTransitionTypes(1/*transition type, 1 on enter 2 on exit*/)
          .build();
 ```
+
+Het geofence van hierboven kan dan gekoppeld worden aan de geofence monitor. Door de code hieronder, naast het toevoegen van een enkele geofence kan er met de addGeofences() een lijst van geofences in een keer worden toegevoegd.
+
+```java
+        // init the geofence request builder.
+        GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
+        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
+
+        //Add the geofence to be monitored by geofencing service.
+        builder.addGeofence(geofence);
+
+        // Build the request.
+        builder.build();
+```
+----
+### Intents
+
+
+
