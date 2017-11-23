@@ -18,7 +18,6 @@ De aanpassingen die hiervoor moeten de volgende aanpassingen in het manifest.xml
         ...
     </application>
 </manifest>
-
 ```
 
 Om uiteindelijk de geofencing Classes en Interfaces te kunnen benaderen moeten de onderstaande toevoegingen aan de build.gradle worden gedaan.
@@ -32,7 +31,6 @@ dependencies {
     compile 'com.google.android.gms:play-services-location:11.0.0'
     ...
 }
-
 ```
 ----
 
@@ -55,14 +53,51 @@ Het geofence van hierboven kan dan gekoppeld worden aan de geofence monitor. Doo
         GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
         builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
 
-        //Add the geofence to be monitored by geofencing service.
-        builder.addGeofence(geofence);
+        builder.addGeofence(geofence); //Add the geofence to be monitored by geofencing service.
 
-        // Build the request.
-        builder.build();
+        builder.build(); // Build the request.
 ```
 ----
 ### Intents
 
+Nu is er dus een geofence aangemaakt en wordt die ook actief gemonitored. 
+Maar als er in of uit de geofence wordt bewogen wordt is dit voor niemand zichtbaar. 
+Wij gaan er voor zorgen dat er een simpele melding wordt getoond zodra er een geofence betreden of uittreden wordt.
 
+Hiervoor is er een classe gemaakt die de IntentService extends. 
+In deze service overschrijven we de onHandleIntent functie zodat wij onze eigen actie aan de getriggerde intent kunnen koppelen.
+In dit poc is er uitgegaan van de happy flow. Voor een productie versie moeten er extra checks worden gedaan op errors oid.
+```java
+@Override
+protected void onHandleIntent(Intent intent) {
+    Log.d(TAG, "onHandleIntent: transition");
+    GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
+    int geofenceTransition = geofencingEvent.getGeofenceTransition();
+    if (geofenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER || geofenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT || geofenceTransition == Geofence.GEOFENCE_TRANSITION_DWELL) {
+        List<Geofence> triggeringGeofences = geofencingEvent.getTriggeringGeofences();
+        String geofenceTransitionDetails = getGeofenceTransitionDetails(geofenceTransition, triggeringGeofences);
+        sendNotification(geofenceTransitionDetails);
+    }
+}
+```
+
+In dit geval is er voor de berichtgeving een Toast en notificatie gemaakt, door onderstaande code.
+```java
+private void sendNotification(final String notificationDetails) {
+    new Handler(Looper.getMainLooper()).post(new Runnable() {
+        @Override
+        public void run() {
+            Toast.makeText(getApplicationContext(), notificationDetails, Toast.LENGTH_LONG).show();
+            NotificationCompat.Builder mBuilder =
+                    new NotificationCompat.Builder(getApplicationContext())
+                            .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
+                            .setContentTitle("Geofence")
+                            .setContentText(notificationDetails);
+            ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(001, mBuilder.build());
+        }
+    });
+}
+```
+
+Hier was/is een extra actie voor nodig omdat dit proces in een andere thread draait (degene die door de intentService wordt gecreerd).
 

@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
 
         geofence = new Geofence.Builder()
                 // Set the request ID of the geofence. This is a string to identify this geofence.
-                .setRequestId("asntuaoe")
+                .setRequestId("geofence")
                 // Set the circular region of this geofence. latitude longitude
                 .setCircularRegion(51.9867038, 5.9510748, Constants.GEOFENCE_RADIUS_IN_METERS)
                 // Set the expiration duration of the geofence. This geofence gets automatically removed after this period of time.
