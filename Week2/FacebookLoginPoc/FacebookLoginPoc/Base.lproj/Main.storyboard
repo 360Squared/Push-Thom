@@ -25,11 +25,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="223.5"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vLd-Ik-ysZ">
-                                        <rect key="frame" x="47.5" y="243.5" width="145" height="30"/>
+                                        <rect key="frame" x="48.5" y="243.5" width="143" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sL-3C-byd" customClass="FBSDKLoginButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="145" height="30"/>
-                                                <state key="normal" title="Log in with Facebook"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sL-3C-byd">
+                                                <rect key="frame" x="0.0" y="0.0" width="143" height="30"/>
+                                                <state key="normal" title="Log in met Facebook"/>
                                                 <connections>
                                                     <action selector="loginButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8CP-cM-XDw"/>
                                                 </connections>
@@ -47,6 +47,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="facebookButton" destination="6sL-3C-byd" id="L1R-Zq-F5j"/>
                         <outlet property="profileImage" destination="c6D-UD-be8" id="45A-w4-LBz"/>
                     </connections>
                 </viewController>

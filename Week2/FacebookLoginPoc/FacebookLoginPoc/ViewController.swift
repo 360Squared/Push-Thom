@@ -9,37 +9,64 @@
 import UIKit
 import FBSDKLoginKit
 
-//import FacebookLogin
-
 
 class ViewController: UIViewController {
 
     var dict : [String : AnyObject]!
     var imageUrl: URL?
-
+    var isLoggedIn = false
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var facebookButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let loginButton = FBSDKLoginButton()
-        if let accessToken = FBSDKAccessToken.current(){
+        _ = FBSDKLoginButton()
+        if (FBSDKAccessToken.current()) != nil {
             getFBUserData()
+            isLoggedIn = true
+            self.facebookButton.setTitle("Log uit", for: .normal)
         }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
+
     //when login button clicked
     @IBAction func loginButtonClicked(_ sender: FBSDKLoginButton) {
         let loginManager = FBSDKLoginManager()
+        
+        if self.isLoggedIn {
+            if self.profileImage != nil && self.profileImage.image != nil {
+                self.profileImage.image = nil
+            }
+            self.isLoggedIn = false
+            self.facebookButton.setTitle("Log in met Facebook", for: .normal)
+            loginManager.logOut()
+        } else {
+            loginManager.logIn(withReadPermissions: ["public_profile", "email", "user_friends"], from: self, handler: { (result, error)-> Void in
+                if (error != nil)
+                {
+                    print("error is \(String(describing: error))")
+                }
+                if (result?.isCancelled)!
+                {
+                    //handle cancelations
+                }
+                if (!(result?.isCancelled)! && (result?.grantedPermissions.contains("email"))!)
+                {
+                    self.getFBUserData();
+                    self.facebookButton.setTitle("Log uit", for: .normal)
+                    self.isLoggedIn = true
+                }
+            })
+        }
     }
     
     //function is fetching the user data
     func getFBUserData(){
-        if((FBSDKAccessToken.current()) != nil){
+        if((FBSDKAccessToken.current()) != nil) {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email, gender , age_range, timezone, link, location, work, birthday, relationship_status, interested_in, about, education"]).start(completionHandler: { (connection, result, error) -> Void in
                 if (error == nil){
                     
@@ -72,19 +99,4 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: FBSDKLoginButtonDelegate {
-    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
-        print("in loginbutton")
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
-        print("In logout button")
-    }
-    
-    func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
-        print("in will login")
-        return true
-    }
-    
-}
 
