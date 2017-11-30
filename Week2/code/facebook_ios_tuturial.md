@@ -4,115 +4,122 @@
 ----
 Voor dit proof of concept gaan we de meest minimalistische vorm van een login met faceboek implementeren.
  
+Dit gaan we doen door jezelf in en uit te kunnen loggen door de sso provider van facebook.
  
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
-Dit gaat gedaan worden door een klein geofence te maken en hier een toast aan te hangen als deze betreden wordt.
-
 ### Voorbereiding
-Omdat voor dit proof of concept toegang nodig is voor de locatie moeten er permissies worden gevraagd aan android.
-De aanpassingen die hiervoor moeten de volgende aanpassingen in het manifest.xml gedaan worden: 
-- Permissie toevoegen
-- Service toevoegen
+ 
+Voor dit proof of concept moet er eerst een basis blanco ios project gemaakt worden, in mijn geval voor ios versie 11. 
+In dit project gaan we delen van de facebook sdk toevoegen, [Hier te downloaden](https://origincache.facebook.com/developers/resources/?id=facebook-ios-sdk-current.zip). 
+
+In het project maken we een nieuwe groep(folder) genaam 'frameworks' hierin zetten we de FBSDKLoginkit.framework en FBSDKCorekit.framework uit de gedownloade zip. 
+Ook moet de uitgepakte versie van de zip aan de Framework Search Paths van de applicatie toegevoegd worden.
+
+In de info.plist moet binnen de <dict> </dict> tags onderstaande geplaatst worden.
+
 ```xml
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.example.thom.geofencing">
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <application>
-        <service android:name=".GeofenceTransitionsIntentService"/>
-        ...
-    </application>
-</manifest>
-```
 
-Om uiteindelijk de geofencing Classes en Interfaces te kunnen benaderen moeten de onderstaande toevoegingen aan de build.gradle worden gedaan.
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+  <key>CFBundleURLSchemes</key>
+  <array>
+    <string>fb app id</string>
+  </array>
+  </dict>
+</array>
+<key>FacebookAppID</key>
+<string>fb app id</string>
+<key>FacebookDisplayName</key>
+<string>Square cloud test</string>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+  <string>fbapi</string>
+  <string>fb-messenger-api</string>
+  <string>fbauth2</string>
+  <string>fbshareextension</string>
+</array>
+``` 
+Voor deze app gaan we eerst een eenvoudige front-end creeeren, zie onderstaande afbeelding.
 
-```json
-apply plugin: 'com.android.application'
+![alt text](Screen%20Shot%202017-11-30%20at%2010.37.19.png)
 
-...
-
-dependencies {
-    compile 'com.google.android.gms:play-services-location:11.0.0'
-    ...
-}
-```
+Hier maken we dus een button en een imageView (voor later).  
+Je kunt de button ook van de classe FBSDKLoginButton maken, dan wordt die gelijk naar de facebook style gemaakt en wordt de standaard login actie toegepast(leuk om een keertje te proberen) maar wij willen meer.
+ 
 ----
+Nu gaan we echt de code in duiken.
 
-### Geofences maken
+Wij gaan zelf de actie achter de button in elkaar zetten, dus het inloggen bij facebook de status van de button bijhouden en de tekst op de button aanpassen. 
+Hiervoor gaan onderstaande code toevoegen aan de ViewController. 
 
-Voor het creeren van een geofence is het ondrestaande stuk code. 
-```java
-Geofence geofence = new Geofence.Builder()
-         .setRequestId("geofence id")
-         .setCircularRegion(51.9867038/*latitude*/,5.9510748 /*longitude*/, 100 /*radius*/)
-         .setExpirationDuration(3600000/*expiration duration in milliseconds*/)
-         .setTransitionTypes(1/*transition type, 1 on enter 2 on exit*/)
-         .build();
-```
+```swift
+    //when login button clicked
+    @IBAction func loginButtonClicked(_ sender: FBSDKLoginButton) {
+        let loginManager = FBSDKLoginManager()
+        
+        if self.isLoggedIn {
+            if self.profileImage != nil && self.profileImage.image != nil {
+                self.profileImage.image = nil
+            }
+            self.isLoggedIn = false
+            self.facebookButton.setTitle("Log in met Facebook", for: .normal)
+            loginManager.logOut()
+        } else {
+            loginManager.logIn(withReadPermissions: ["public_profile", "email", "user_friends"], from: self, handler: { (result, error)-> Void in
+                if (error != nil)
+                {
+                    print("error is \(String(describing: error))")
+                }
+                if (!(result?.isCancelled)! && (result?.grantedPermissions.contains("email"))!)
+                {
+                    self.getFBUserData();
+                    self.facebookButton.setTitle("Log uit", for: .normal)
+                    self.isLoggedIn = true
+                }
+            })
+        }
+    }
+``` 
+Deze functie handelt de actie van de button af waarbij de basis login actie eigenlijk nagebootst wordt. 
 
-Het geofence van hierboven kan dan gekoppeld worden aan de geofence monitor. Door de code hieronder, naast het toevoegen van een enkele geofence kan er met de addGeofences() een lijst van geofences in een keer worden toegevoegd.
+Om nog meer data van de facebook gebruiker op te halen is de functie getFBUserData. Deze functie staat hieronder beschreven. 
 
-```java
-        // init the geofence request builder.
-        GeofencingRequest.Builder builder = new GeofencingRequest.Builder();
-        builder.setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER);
-
-        builder.addGeofence(geofence); //Add the geofence to be monitored by geofencing service.
-
-        builder.build(); // Build the request.
-```
-----
-### Intents
-
-Nu is er dus een geofence aangemaakt en wordt die ook actief gemonitored. 
-Maar als er in of uit de geofence wordt bewogen wordt is dit voor niemand zichtbaar. 
-Wij gaan er voor zorgen dat er een simpele melding wordt getoond zodra er een geofence betreden of uittreden wordt.
-
-Hiervoor is er een classe gemaakt die de IntentService extends. 
-In deze service overschrijven we de onHandleIntent functie zodat wij onze eigen actie aan de getriggerde intent kunnen koppelen.
-In dit poc is er uitgegaan van de happy flow. Voor een productie versie moeten er extra checks worden gedaan op errors oid.
-```java
-@Override
-protected void onHandleIntent(Intent intent) {
-    Log.d(TAG, "onHandleIntent: transition");
-    GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
-    int geofenceTransition = geofencingEvent.getGeofenceTransition();
-    if (geofenceTransition == Geofence.GEOFENCE_TRANSITION_ENTER || geofenceTransition == Geofence.GEOFENCE_TRANSITION_EXIT || geofenceTransition == Geofence.GEOFENCE_TRANSITION_DWELL) {
-        List<Geofence> triggeringGeofences = geofencingEvent.getTriggeringGeofences();
-        String geofenceTransitionDetails = getGeofenceTransitionDetails(geofenceTransition, triggeringGeofences);
-        sendNotification(geofenceTransitionDetails);
+```swift
+func getFBUserData(){
+    if((FBSDKAccessToken.current()) != nil) {
+        FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, picture.type(large), email, gender , age_range, timezone"]).start(completionHandler: { (connection, result, error) -> Void in
+            if (error == nil){
+                
+                self.dict = result as! [String : AnyObject]
+                if let picture = self.dict["picture"] as? [String: Any] {
+                    
+                    if let pictureData = picture["data"] as? [String: Any] {
+                        if let pictureUrlString = pictureData["url"] as? String {
+                            
+                            let pictureUrl = URL(string: pictureUrlString)
+                            self.imageUrl = pictureUrl
+                            
+                            DispatchQueue.global(qos: .userInitiated).async {
+                                let contentsOfURL = try? Data(contentsOf: pictureUrl!)
+                                
+                                DispatchQueue.main.async {
+                                    if pictureUrl == self.imageUrl {
+                                        if let imageData = contentsOfURL {
+                                            self.profileImage?.image = UIImage(data: imageData)
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        })
     }
 }
-```
+``` 
 
-In dit geval is er voor de berichtgeving een Toast en notificatie gemaakt, door onderstaande code.
-```java
-private void sendNotification(final String notificationDetails) {
-    new Handler(Looper.getMainLooper()).post(new Runnable() {
-        @Override
-        public void run() {
-            Toast.makeText(getApplicationContext(), notificationDetails, Toast.LENGTH_LONG).show();
-            NotificationCompat.Builder mBuilder =
-                    new NotificationCompat.Builder(getApplicationContext())
-                            .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                            .setContentTitle("Geofence")
-                            .setContentText(notificationDetails);
-            ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).notify(001, mBuilder.build());
-        }
-    });
-}
-```
-
-Hier was/is een extra actie voor nodig omdat dit proces in een andere thread draait (degene die door de intentService wordt gecreerd).
-
+Deze functie zorgt ervoor dat de facebook profiel foto in de applicatie zichtbaar wordt gemaakt.
+Dit zijn de meest basis functies die dit concept bewijzen daarnaast moet de app worden goedgekeurd als er meer data van facebook gehaald wordt. 
+Dingen die bijvoorbeeld niet opgehaald kunnen worden als de app niet is goedgekeurd: link, location, work, birthday, relationship_status, interested_in, about, education.
+ 
