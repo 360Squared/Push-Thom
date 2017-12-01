@@ -1,0 +1,12 @@
+PODS:
+  - youtube-parser (0.2.3)
+
+DEPENDENCIES:
+  - youtube-parser
+
+SPEC CHECKSUMS:
+  youtube-parser: 4e2bd89c8884c35eb17c3b51cfcdad272611d7be
+
+PODFILE CHECKSUM: 9e9aa59c969408f0e471594608781f187519e7f0
+
+COCOAPODS: 1.3.1
