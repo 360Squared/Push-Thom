@@ -7,3 +7,5 @@ In deze repo worden de technology pushes van mij geplubliceerd.
 - [ios facebook login](/Week2/ios_facebook_login.md)
 
 - [Android youtube starter](/Week2/android_youtube_starter.md)
+
+- [Android NFC](/Week3/android_nfc.md)
