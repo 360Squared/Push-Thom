@@ -31,5 +31,7 @@ private final SensorEventListener LightSensorListener = new SensorEventListener(
     }
 };
 ```
+Hieruit komt onderstaand resultaat:
+![LightSensor](Screenshot_20171206-133557.png)
 
  
