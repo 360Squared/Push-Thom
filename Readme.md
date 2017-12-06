@@ -11,3 +11,5 @@ In deze repo worden de technology pushes van mij geplubliceerd.
 - [Android NFC](/Week3/android_nfc.md)
 
 - [Android StepCounter](/Week3/android_stepcounter.md)
+
+- [Android Lichtsensor](/Week3/android_lightsensor.md)
