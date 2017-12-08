@@ -13,3 +13,11 @@ In deze repo worden de technology pushes van mij geplubliceerd.
 - [Android StepCounter](/Week3/android_stepcounter.md)
 
 - [Android Lichtsensor](/Week3/android_lightsensor.md)
+
+- [Api call met authorisatie](/Week3/api_call_met_authorisatie.md)
+
+## Reflecties
+
+- [Week 1](/Week1/reflectie.md)
+- [Week 2](/Week2/reflectie.md)
+- [Week 3](/Week3/reflectie.md)
