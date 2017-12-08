@@ -21,6 +21,6 @@ Wat wilde je vorige week ook alweer verbeteren en in hoeverre is dit gelukt?
 > Deze week vond ik de samenwerking soms wat minder soepel lopen. 
 > Dit kwam vooral doordat er veel verschillende meningen waren over wat er gedaan moest worden, wat nu belangrijk was en wat al wel goed was. Ik stoor mezelf hier erg aan want dit kost heel veel tijd en levert niks anders dan irritatie binnen de groep op. Dit kwam vooral omdat we deze week een prototype moesten maken. En hier dus ook weer feedback op kregen. Ik ben van mening dat we niet vaak genoeg alle neuzen 1 kant op hebben. 
 
-3. Wat ga je komende proberen te verbeteren?
+3. Wat ga je komende weken proberen te verbeteren?
 > Ik ga komende week proberen de groep beter bij elkaar te brengen. Door meer iedereen te betrekken door alle neuzen dezelfde kant op te krijgen en de frustaties boven water te krijgen.
 

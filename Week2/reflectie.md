@@ -22,7 +22,7 @@ Wat wilde je vorige week ook alweer verbeteren en in hoeverre is dit gelukt?
 > Door de vaagheid van dit project heb ik niet het idee dat de kennis van iedereen optimaal wordt ingezet, dit vind ik zonde. 
 > Ik denk dat dit in de aankomende weken minder een probleem wordt want wij gaan straks beter weten wat we aan elkaar hebben en daarnaast gaan we elkaar beter ondersteunen doordat we van elkaar leren.  
  
-3. Wat ga je komende proberen te verbeteren?
+3. Wat ga je komende weken proberen te verbeteren?
 > M'n uitstel gedrag.
 > Ik heb nogal de neiging om dingen die mij minder interessant lijken uit te stellen tot vlak voor dat het af moet zijn. Dit heeft dus heeft als effect dat de kwaliteit van de dingen die gedaan moeten worden achteruit gaat. 
 
