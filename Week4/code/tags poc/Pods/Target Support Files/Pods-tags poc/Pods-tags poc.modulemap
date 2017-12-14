@@ -1,0 +1,6 @@
+framework module Pods_tags_poc {
+  umbrella header "Pods-tags poc-umbrella.h"
+
+  export *
+  module * { export * }
+}
