@@ -8,7 +8,7 @@ Geef een beschrijving van de test die je gedaan hebt met elk Proof of Concept. V
 
 * **hypothese:**  
 Er kwam vanuit de groep een vraag naar een lijst zoals bijvoorbeeld bij de contacten app met de plusjes en minnetjes, zie onderstaand voorbeeld van ons concept. 
-![LightSensor](persoonlijkheid_toevoegen.png)
+![Persoonlijkheid toevoegen](persoonlijkheid_toevoegen.png)
 Ik zag hier wat meer uitdaging in om dit lekker vloeiend te laten werken. 
 
 * **testopzet:**  
@@ -17,7 +17,7 @@ Deze heb ik aangepast zodat ik snoepgoed kon toevoegen en verwijderen.
 
 * **resultaat:**  
 Om dit te realiseren heb ik een ios applicatie gemaakt dat bovenstaande implementeerd. Zie voorbeeld hieronder:
-![LightSensor](RGZY6151.gif)
+![Voorbeeld](RGZY6151.gif)
 
 De complexere punten waren:
 - Het zoekmechanisme.
