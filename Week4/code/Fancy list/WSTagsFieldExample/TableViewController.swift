@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import WSTagsField
+//import WSTagsField
 
 class TableViewController: UITableViewController {
 

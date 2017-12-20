@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		680CC57A1FE124E40052B2B6 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680CC5791FE124E40052B2B6 /* SearchTableViewController.swift */; };
 		680CC57C1FE13FC10052B2B6 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680CC57B1FE13FC10052B2B6 /* Skill.swift */; };
+		68869B871FE4488E007C7E63 /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 68869B7C1FE4488E007C7E63 /* Source */; };
+		68869B881FE4488E007C7E63 /* WSTagsField in Resources */ = {isa = PBXBuildFile; fileRef = 68869B861FE4488E007C7E63 /* WSTagsField */; };
+		68869B8A1FE448A2007C7E63 /* WSTagsField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68869B891FE448A1007C7E63 /* WSTagsField.swift */; };
+		68869B8F1FE448CF007C7E63 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68869B8B1FE448CE007C7E63 /* Constants.swift */; };
+		68869B901FE448CF007C7E63 /* BackspaceDetectingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68869B8C1FE448CF007C7E63 /* BackspaceDetectingTextField.swift */; };
+		68869B911FE448CF007C7E63 /* WSTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68869B8D1FE448CF007C7E63 /* WSTagView.swift */; };
+		68869B921FE448CF007C7E63 /* WSTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68869B8E1FE448CF007C7E63 /* WSTag.swift */; };
 		68F23A7A1FE28B31007FD9A0 /* addItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F23A791FE28B31007FD9A0 /* addItemTableViewCell.swift */; };
 		D73307521EB3B8DE00FD29B4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73307511EB3B8DE00FD29B4 /* TableViewController.swift */; };
 		D7F33FF61D2A7378003F0082 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F33FF51D2A7378003F0082 /* AppDelegate.swift */; };
@@ -16,31 +23,22 @@
 		D7F33FFB1D2A7378003F0082 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F33FF91D2A7378003F0082 /* Main.storyboard */; };
 		D7F33FFD1D2A7378003F0082 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7F33FFC1D2A7378003F0082 /* Assets.xcassets */; };
 		D7F340001D2A7378003F0082 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7F33FFE1D2A7378003F0082 /* LaunchScreen.storyboard */; };
-		D7F340101D2A7416003F0082 /* WSTagsField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7F3400D1D2A7407003F0082 /* WSTagsField.framework */; };
-		D7F340111D2A7416003F0082 /* WSTagsField.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D7F3400D1D2A7407003F0082 /* WSTagsField.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		D7F3400C1D2A7407003F0082 /* PBXContainerItemProxy */ = {
+		68869B821FE4488E007C7E63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D7F340071D2A7407003F0082 /* WSTagsField.xcodeproj */;
+			containerPortal = 68869B7D1FE4488E007C7E63 /* WSTagsField.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D78C9FEF1D2A6AFD004F4BFF;
 			remoteInfo = WSTagsField;
 		};
-		D7F3400E1D2A7407003F0082 /* PBXContainerItemProxy */ = {
+		68869B841FE4488E007C7E63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D7F340071D2A7407003F0082 /* WSTagsField.xcodeproj */;
+			containerPortal = 68869B7D1FE4488E007C7E63 /* WSTagsField.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = D78C9FF91D2A6AFD004F4BFF;
 			remoteInfo = WSTagsFieldTests;
-		};
-		D7F340121D2A7416003F0082 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D7F340071D2A7407003F0082 /* WSTagsField.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D78C9FEE1D2A6AFD004F4BFF;
-			remoteInfo = WSTagsField;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -51,7 +49,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D7F340111D2A7416003F0082 /* WSTagsField.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -61,6 +58,14 @@
 /* Begin PBXFileReference section */
 		680CC5791FE124E40052B2B6 /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
 		680CC57B1FE13FC10052B2B6 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		68869B7C1FE4488E007C7E63 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source; sourceTree = "<group>"; };
+		68869B7D1FE4488E007C7E63 /* WSTagsField.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WSTagsField.xcodeproj; path = "../../../../../../Downloads/WSTagsField-master/WSTagsField.xcodeproj"; sourceTree = "<group>"; };
+		68869B861FE4488E007C7E63 /* WSTagsField */ = {isa = PBXFileReference; lastKnownFileType = folder; name = WSTagsField; path = "../../../../../../Downloads/WSTagsField-master/WSTagsField"; sourceTree = "<group>"; };
+		68869B891FE448A1007C7E63 /* WSTagsField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTagsField.swift; sourceTree = "<group>"; };
+		68869B8B1FE448CE007C7E63 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		68869B8C1FE448CF007C7E63 /* BackspaceDetectingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackspaceDetectingTextField.swift; sourceTree = "<group>"; };
+		68869B8D1FE448CF007C7E63 /* WSTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTagView.swift; sourceTree = "<group>"; };
+		68869B8E1FE448CF007C7E63 /* WSTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WSTag.swift; sourceTree = "<group>"; };
 		68F23A791FE28B31007FD9A0 /* addItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addItemTableViewCell.swift; sourceTree = "<group>"; };
 		D73307511EB3B8DE00FD29B4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D7F33FF21D2A7378003F0082 /* WSTagsFieldExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WSTagsFieldExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +75,6 @@
 		D7F33FFC1D2A7378003F0082 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7F33FFF1D2A7378003F0082 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D7F340011D2A7378003F0082 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D7F340071D2A7407003F0082 /* WSTagsField.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WSTagsField.xcodeproj; path = ../WSTagsField.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,19 +82,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7F340101D2A7416003F0082 /* WSTagsField.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68869B791FE447E0007C7E63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				68869B7C1FE4488E007C7E63 /* Source */,
+				68869B861FE4488E007C7E63 /* WSTagsField */,
+				68869B7D1FE4488E007C7E63 /* WSTagsField.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		68869B7E1FE4488E007C7E63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68869B831FE4488E007C7E63 /* WSTagsField.framework */,
+				68869B851FE4488E007C7E63 /* WSTagsFieldTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D7F33FE91D2A7378003F0082 = {
 			isa = PBXGroup;
 			children = (
 				D7F33FF41D2A7378003F0082 /* WSTagsFieldExample */,
 				D7F33FF31D2A7378003F0082 /* Products */,
-				D7F340071D2A7407003F0082 /* WSTagsField.xcodeproj */,
+				68869B791FE447E0007C7E63 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,17 +137,13 @@
 				680CC5791FE124E40052B2B6 /* SearchTableViewController.swift */,
 				680CC57B1FE13FC10052B2B6 /* Skill.swift */,
 				68F23A791FE28B31007FD9A0 /* addItemTableViewCell.swift */,
+				68869B891FE448A1007C7E63 /* WSTagsField.swift */,
+				68869B8C1FE448CF007C7E63 /* BackspaceDetectingTextField.swift */,
+				68869B8B1FE448CE007C7E63 /* Constants.swift */,
+				68869B8E1FE448CF007C7E63 /* WSTag.swift */,
+				68869B8D1FE448CF007C7E63 /* WSTagView.swift */,
 			);
 			path = WSTagsFieldExample;
-			sourceTree = "<group>";
-		};
-		D7F340081D2A7407003F0082 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				D7F3400D1D2A7407003F0082 /* WSTagsField.framework */,
-				D7F3400F1D2A7407003F0082 /* WSTagsFieldTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,7 +161,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				D7F340131D2A7416003F0082 /* PBXTargetDependency */,
 			);
 			name = WSTagsFieldExample;
 			productName = WSTagsFieldExample;
@@ -180,8 +197,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D7F340081D2A7407003F0082 /* Products */;
-					ProjectRef = D7F340071D2A7407003F0082 /* WSTagsField.xcodeproj */;
+					ProductGroup = 68869B7E1FE4488E007C7E63 /* Products */;
+					ProjectRef = 68869B7D1FE4488E007C7E63 /* WSTagsField.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -192,18 +209,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D7F3400D1D2A7407003F0082 /* WSTagsField.framework */ = {
+		68869B831FE4488E007C7E63 /* WSTagsField.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = WSTagsField.framework;
-			remoteRef = D7F3400C1D2A7407003F0082 /* PBXContainerItemProxy */;
+			remoteRef = 68869B821FE4488E007C7E63 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D7F3400F1D2A7407003F0082 /* WSTagsFieldTests.xctest */ = {
+		68869B851FE4488E007C7E63 /* WSTagsFieldTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = WSTagsFieldTests.xctest;
-			remoteRef = D7F3400E1D2A7407003F0082 /* PBXContainerItemProxy */;
+			remoteRef = 68869B841FE4488E007C7E63 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -216,6 +233,8 @@
 				D7F340001D2A7378003F0082 /* LaunchScreen.storyboard in Resources */,
 				D7F33FFD1D2A7378003F0082 /* Assets.xcassets in Resources */,
 				D7F33FFB1D2A7378003F0082 /* Main.storyboard in Resources */,
+				68869B881FE4488E007C7E63 /* WSTagsField in Resources */,
+				68869B871FE4488E007C7E63 /* Source in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,24 +245,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68869B8A1FE448A2007C7E63 /* WSTagsField.swift in Sources */,
 				D7F33FF81D2A7378003F0082 /* ViewController.swift in Sources */,
 				D73307521EB3B8DE00FD29B4 /* TableViewController.swift in Sources */,
 				680CC57C1FE13FC10052B2B6 /* Skill.swift in Sources */,
+				68869B921FE448CF007C7E63 /* WSTag.swift in Sources */,
 				D7F33FF61D2A7378003F0082 /* AppDelegate.swift in Sources */,
 				68F23A7A1FE28B31007FD9A0 /* addItemTableViewCell.swift in Sources */,
 				680CC57A1FE124E40052B2B6 /* SearchTableViewController.swift in Sources */,
+				68869B911FE448CF007C7E63 /* WSTagView.swift in Sources */,
+				68869B901FE448CF007C7E63 /* BackspaceDetectingTextField.swift in Sources */,
+				68869B8F1FE448CF007C7E63 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		D7F340131D2A7416003F0082 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = WSTagsField;
-			targetProxy = D7F340121D2A7416003F0082 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D7F33FF91D2A7378003F0082 /* Main.storyboard */ = {

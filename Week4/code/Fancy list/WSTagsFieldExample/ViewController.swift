@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import WSTagsField
+//import WSTagsField
 
 class ViewController: UIViewController {
     fileprivate let tagsField = WSTagsField()
     @IBOutlet fileprivate weak var tagsView: UIView!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         tagsField.frame = tagsView.bounds

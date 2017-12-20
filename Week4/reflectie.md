@@ -9,18 +9,17 @@ Beschrijf concrete aspecten van de samenwerking, geef aan in hoeverre je daar te
 
 ### Vorige week
 Wat wilde je vorige week ook alweer verbeteren en in hoeverre is dit gelukt? 
-> Ik wilde vorige week m'n uitstel gedrag verbeteren (dus niet meer alles tot het laatst bewaren.). Dit heb ik naar mijn mening succesvol verbeterd. Ik heb bijvoorbeeld deze week 3,5 poc's. Hiermee toon ik dus aan dat ik initiatief toon.  
+> Ik wilde de groep meer bij elkaar brengen zodat de samenwerking beter zou gaan. Dit is gelukt door een ipv te doen, dit zorgde ervoor dat de frustaties op een nette manier naar voren kwamen.  
 
 ### Afgelopen week
 
 
 1. Wat ging er afgelopen week goed?
-> Het vinden van motivatie, het maken van de technology pushes en het managen van tijd. Ik heb het gevoel dat ik deze week beter wist wat ik moest doen waardoor ik dit beter kon inplannen en daardoor ook beter managen.  
+> Deze week was de eerste echte bouwsprint, wij hebben deze week goed de neuzen dezelfde kant op gestoken en veel meters gemaakt wat betreft prototype en uitwerking(en) daarvan. 
+> Deze week hebben we ook een uitgebreide user-test gedaan, door ons te verspreiden in drie groepen over drie steden (Arnhem, Nijmegen en Utrecht). En wij hebben voor deze test twee prototypes gemaakt in protopie, wij hadden hier een vragenlijst aan gekoppeld en deze vragen gesteld aan winkeleigenaren / managers die tijd hadden. Hier hebben wij veel nuttig resultaat uit gekregen. 
 
 2. Wat ging er niet goed, waar heb je je aan geërgerd, wat moet er niet meer gebeuren?
-> Deze week vond ik de samenwerking soms wat minder soepel lopen. 
-> Dit kwam vooral doordat er veel verschillende meningen waren over wat er gedaan moest worden, wat nu belangrijk was en wat al wel goed was. Ik stoor mezelf hier erg aan want dit kost heel veel tijd en levert niks anders dan irritatie binnen de groep op. Dit kwam vooral omdat we deze week een prototype moesten maken. En hier dus ook weer feedback op kregen. Ik ben van mening dat we niet vaak genoeg alle neuzen 1 kant op hebben. 
+> Ik vond dat ik deze week niet zoveel heb mee gekregen hoe de prototypes gemaakt zijn(ik was misschien iets te druk met mijn technologie push). Ik wil dit volgende weken actief verbeteren door mee te helpen met het maken van deze prototypes. 
 
 3. Wat ga je komende weken proberen te verbeteren?
-> Ik ga komende week proberen de groep beter bij elkaar te brengen. Door meer iedereen te betrekken door alle neuzen dezelfde kant op te krijgen en de frustaties boven water te krijgen.
-
+> Wat ik hierboven al heb gezet, wil ik graag een groter aandeel hebben in het maken van de prototypes. Daarnaast wil ik wat minder tijd kwijt zijn aan de technology pushes, dit was deze week een beetje uitgelopen.
