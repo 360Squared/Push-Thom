@@ -12,6 +12,18 @@ import UIKit
 class ViewController: UIViewController {
     fileprivate let tagsField = WSTagsField()
     @IBOutlet fileprivate weak var tagsView: UIView!
+    var skills:[Skill] {
+        get {
+            return []
+        }
+        set(skillList) {
+            tagsField.removeTags()
+            tagsField.readOnly = true
+            for item in skillList {
+                tagsField.addTag(item.name)
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tagsField.frame = tagsView.bounds
@@ -60,7 +72,15 @@ class ViewController: UIViewController {
 //            print("something")
 //        }
     }
+    @IBAction func openSelectView(_ sender: UIButton) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "selectView") as! SearchTableViewController
+        newViewController.viewController = self
+//        self.present(newViewController, animated: true, completion: nil)
+        self.navigationController?.pushViewController(newViewController, animated: true)
 
+    }
+    
 }
 
 extension ViewController {

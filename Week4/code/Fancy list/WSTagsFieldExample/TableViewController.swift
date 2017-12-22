@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import WSTagsField
 
 class TableViewController: UITableViewController {
 
@@ -24,8 +23,6 @@ class TableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         tableView.reloadData()
-        //tableView.beginUpdates()
-        //tableView.endUpdates()
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +53,6 @@ class TagsViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         tagsField.placeholder = "Enter a tag"
         tagsField.backgroundColor = .white
-        //tagsField.frame = CGRect(x: 0, y: 0, width: 300, height: 44)
         tagsField.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(tagsField)
 
@@ -64,9 +60,6 @@ class TagsViewCell: UITableViewCell {
             tagsField.topAnchor.constraint(equalTo: contentView.topAnchor),
             tagsField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             tagsField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            //tagsField.heightAnchor.constraint(greaterThanOrEqualToConstant: 44),
-            //tagsField.heightAnchor.constraint(equalToConstant: 44),
-            //tagsField.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             contentView.bottomAnchor.constraint(equalTo: tagsField.bottomAnchor)
         ])
 

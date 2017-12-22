@@ -13,7 +13,7 @@
         <!--Search Table View Controller-->
         <scene sceneID="4zM-iY-jmt">
             <objects>
-                <tableViewController id="zyX-Og-vmQ" customClass="SearchTableViewController" customModule="WSTagsFieldExample" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="selectView" id="zyX-Og-vmQ" customClass="SearchTableViewController" customModule="WSTagsFieldExample" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cAQ-wd-jsK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,11 +126,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CfR-OR-V9X">
-                                <rect key="frame" x="228" y="517" width="46" height="30"/>
+                                <rect key="frame" x="74" y="517" width="200" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Open select view"/>
                                 <connections>
-                                    <segue destination="zyX-Og-vmQ" kind="show" id="BjF-1Z-xA1"/>
+                                    <action selector="openSelectView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c3c-XM-8eb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -152,7 +152,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-450" y="-60"/>
+            <point key="canvasLocation" x="-450.39999999999998" y="-60.719640179910051"/>
         </scene>
     </scenes>
     <resources>

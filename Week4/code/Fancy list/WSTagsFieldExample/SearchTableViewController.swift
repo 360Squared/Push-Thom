@@ -32,7 +32,7 @@ class SearchTableViewController: UITableViewController {
     var toAddSkills = [Skill]()
     var filteredAddedSkills = [Skill]()
     var filteredToAddSkills = [Skill]()
-
+    var viewController: ViewController?
     var searchController = UISearchController(searchResultsController: nil)
 
     
@@ -54,6 +54,11 @@ class SearchTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        viewController?.skills = addedSkills
+        print("view dissapeareeedese")
     }
 
     override func didReceiveMemoryWarning() {
