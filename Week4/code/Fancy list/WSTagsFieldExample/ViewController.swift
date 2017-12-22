@@ -2,8 +2,6 @@
 //  ViewController.swift
 //  WSTagsFieldExample
 //
-//  Created by Ricardo Pereira on 04/07/16.
-//  Copyright © 2016 Whitesmith. All rights reserved.
 //
 
 import UIKit
@@ -12,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
     fileprivate let tagsField = WSTagsField()
     @IBOutlet fileprivate weak var tagsView: UIView!
+    
     var skills:[Skill] {
         get {
             return []
@@ -24,6 +23,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tagsField.frame = tagsView.bounds
@@ -61,22 +61,11 @@ class ViewController: UIViewController {
         tagsField.addTag("test3")
         tagsField.addTag("test4")
     }
-    @IBAction func unwindSomething(sender: UIStoryboardSegue) {
-        if let sourceviewcontroller = sender.source as? SearchTableViewController {
-            print(sourceviewcontroller)
-        }
-        print((sender.source as? addItemTableViewCell)?.plusUILabel)
-        print((sender.source as? Skill)?.name)
-        print(sender.identifier)
-//        if let skill =  as Skill {
-//            print("something")
-//        }
-    }
+
     @IBAction func openSelectView(_ sender: UIButton) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "selectView") as! SearchTableViewController
         newViewController.viewController = self
-//        self.present(newViewController, animated: true, completion: nil)
         self.navigationController?.pushViewController(newViewController, animated: true)
 
     }
