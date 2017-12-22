@@ -16,8 +16,13 @@ In deze repo worden de technology pushes van mij geplubliceerd.
 
 - [Api call met authorisatie](/Week3/api_call_met_authorisatie.md)
 
+- [Fancy List](/Week4/fancy_list.md)
+
+- [Tags View](/Week4/tags_view.md)
+
 ## Reflecties
 
 - [Week 1](/Week1/reflectie.md)
 - [Week 2](/Week2/reflectie.md)
 - [Week 3](/Week3/reflectie.md)
+- [Week 4](/Week3/reflectie.md)
