@@ -7,18 +7,83 @@ Geef een beschrijving van de test die je gedaan hebt met elk Proof of Concept. V
 ### Android StepCounter
 
 * **hypothese:**  
-Hoe kan ik informatie verschaffen aan google assistant met een lokale app?
+Hoe kan ik in android het best en netst grafieken maken en tonen?
 
 * **testopzet:**  
-Op [deze](https://developer.android.com/training/articles/assistant.html) gelinkte pagina staat een hele lijst met manieren om de google assistent aan te vullen. Ik wil minimaal de licht intensiteit laten weten aan google assistent zodat ik dit handsfree kan opvragen.
+> Ik wil meerdere methoden opzoeken en uitzoeken welke de beste is.
+> Methoden/bronnen:
+> 1. [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)
+> 2. [AChartEngine](https://github.com/ddanny/achartengine)
+> 3. [WilliamChart](https://github.com/diogobernardino/WilliamChart)
+> 4. [HelloCharts android](https://github.com/lecho/hellocharts-android)
+> 5. [Androidplot](https://github.com/halfhp/androidplot)
 
 * **resultaat:** 
-Dit heeft uiteindelijk tot niks geleid na veel te veel uren erin gestoken te hebben. Ik heb meerdere methodes geprobeerd:
-1. De applicatie laten luisteren naar een intent van de assistant.
-> Ik heb bovenstaande link gevolgd en gepoogd na te maken maar ik kon het niet voor elkaar krijgen dat ik andere data op het scherm kreeg dan een "gewone" websearch. 
-2. De applicatie context mee laten geven over het active scherm. 
-> Ik heb het hele process gedebugged voor het starten van de assistant door breakpoints in de activity class van android te plaatsen. Voor deze methode heb ik meerdere functies overschreven zodat ik de contextuele data aan kon leveren van mijn applicatie. Maar als ik dan vroeg aan google om mijn scherm te lezen gaf hij aan niks te kunnen vinden. 
-3. Ook heb ik gekeken hoe ik een cloud oplossing hier voor kon maken. 
-> Ik heb eerst gekeken of ik met [ifttt.com](http://ifttt.com) een link kon openen op het device die ik dan zou afvangen met de applicatie op de telefoon, dit zou kunnen werken met een aantal omwegen door meerdere apps te koppelen maar dit kan niet out of the box. Ook heb ik gepoogd om een cloud google action toe te voegen aan m'n assistant maar dit wilde ook niet lukken aangezien ik op de pagina waar ik de acties kan koppelen enzo. Een witte pagina voorgeschoteld krijg. 
+1. [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)
+> ####Pluspunten:
+> * Groot aantal verschillende grafieken:
+>> 1. Lijndiagram (kan met meerdere lijnen)
+>> 2. Staafdiagram (verticaal, horizontaal, gestapeld en gegroepeerd)
+>> 3. Cirkeldiagram
+>> 4. Spreidingsdiagram
+>> 5. Kandelaar grafiek (voor financiele data)
+>> 6. Radardiagram
+>> 7. Bubbeldiagram
+> * Automatische schaling
+> * Zoom en sleep functionaliteiten
+> * Voorbeeld project
+> * Beschikbaar als maven en gradle dependency 
+> * Schijnt ook beschikbaar te zijn voor ios en xamarin
+> ####Minpunten:
+> * Werkt niet goed met realtime data (veranderingen)
+> ####Eigen mening:
+> Ik heb deze zelf getest, doordat dit project een voorbeeld project heeft met heel veel verschillende grafieken is het heel eenvoudig om er zelf mee aan de slag te gaan door de gewenste grafiek in het voorbeeld projcet te zoeken en deze te kopieren (of hiervan afkijken). Daarnaast is de documentatie redelijk uitgebreid en duidelijk. Als ik grafieken nodig zou hebben in mijn android app zou ik deze library zonder problemen kunnen gebruiken. 
+```java
+        LineChart chart = findViewById(R.id.LineChart);
+        List<Entry> entries = new ArrayList<>();
+        Random r = new Random();
+        for(int i = 0; i < 25; i++) {
+            entries.add(new Entry(i, r.nextInt(100)));
+        }
+        LineDataSet lineDataSet = new LineDataSet(entries, "graph");
+        LineData lineData = new LineData(lineDataSet);
+        chart.setData(lineData);
+        chart.invalidate();
+    }
+```
+> Bovenstaande code is alles om de meest simpele line chart te tonen met random waarden.
+2. [AChartEngine](https://github.com/ddanny/achartengine)
+> ####Pluspunten:
+> * Groot aantal verschillende grafieken:
+>> 1. Lijndiagram (kan met meerdere lijnen)
+>> 2. Gestapelde diagram
+>> 3. Tijdsgrafiek
+>> 4. Bubbeldiagram
+>> 5. Donutdiagram
+>> 6. Gekombineerd diagram
+> ####Minpunten:
+> * Automatische schaling
+> * Zoom en sleep functionaliteiten
+> * Bischikbaar als gradle dependency
+> ####Eigen mening:
+> Deze graph heb ik ook getest. Deze library is out of the box in de meest uitgeklede variant wel een stuk minder mooi en zit anders in elkaar doordat de view in de code wordt toegevoegd in plaats van de android layout designer. Met onderstaande code kon ik dit mogelijk maken. Dit project heeft eigenlijk geen documentatie, er zijn wel een aantal handleidingen in hoe het te gebruiken is.
+```java
+        XYSeries series = new XYSeries("London Temperature hourly");
+        for(int i = 0; i < 25; i++) {
+            series.add(i, r.nextInt(35)); //random temperatuur tussen 0 en 35
+        }
+        XYSeriesRenderer renderer = new XYSeriesRenderer();
 
-Punt 3 lijkt LightSensorforAssistanthet meest resultaat op te leveren maar dan heb ik de hypothese niet beantwoord maar dan open ik een app met een custom voice comando. 
+        XYMultipleSeriesRenderer mRenderer = new XYMultipleSeriesRenderer();
+        mRenderer.addSeriesRenderer(renderer);
+        
+        XYMultipleSeriesDataset xymsd = new XYMultipleSeriesDataset();
+        xymsd.addSeries(series);
+        GraphicalView chartView = ChartFactory.getLineChartView(this, xymsd, mRenderer);
+        ConstraintLayout chartLyt = findViewById(R.id.chart);
+        chartLyt.addView(chartView,0);
+``` 
+3. [WilliamChart](https://github.com/diogobernardino/WilliamChart)
+
+4. [HelloCharts android](https://github.com/lecho/hellocharts-android)
+5. [Androidplot](https://github.com/halfhp/androidplot) 
