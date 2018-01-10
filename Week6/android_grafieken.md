@@ -21,7 +21,7 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
 
 * **resultaat:** 
 1. [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart)
-> ####Pluspunten:
+> #### Pluspunten:
 > * Groot aantal verschillende grafieken:
 >> 1. Lijndiagram (kan met meerdere lijnen)
 >> 2. Staafdiagram (verticaal, horizontaal, gestapeld en gegroepeerd)
@@ -35,9 +35,9 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
 > * Voorbeeld project
 > * Beschikbaar als maven en gradle dependency 
 > * Schijnt ook beschikbaar te zijn voor ios en xamarin
-> ####Minpunten:
+> #### Minpunten:
 > * Werkt niet goed met realtime data (veranderingen)
-> ####Eigen mening:
+> #### Eigen mening:
 > Ik heb deze zelf getest, doordat dit project een voorbeeld project heeft met heel veel verschillende grafieken is het heel eenvoudig om er zelf mee aan de slag te gaan door de gewenste grafiek in het voorbeeld projcet te zoeken en deze te kopieren (of hiervan afkijken). Daarnaast is de documentatie redelijk uitgebreid en duidelijk. Als ik grafieken nodig zou hebben in mijn android app zou ik deze library zonder problemen kunnen gebruiken. 
 ```java
         LineChart chart = findViewById(R.id.LineChart);
@@ -54,7 +54,7 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
 ```
 > Bovenstaande code is alles om de meest simpele line chart te tonen met random waarden.
 2. [AChartEngine](https://github.com/ddanny/achartengine)
-> ####Pluspunten:
+> #### Pluspunten:
 > * Groot aantal verschillende grafieken:
 >> 1. Lijndiagram (kan met meerdere lijnen)
 >> 2. Gestapelde diagram
@@ -65,9 +65,9 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
 > * Automatische schaling
 > * Zoom en sleep functionaliteiten
 > * Bischikbaar als gradle dependency
-> ####Minpunten:
+> #### Minpunten:
 > * Geen documentatie
-> ####Eigen mening:
+> #### Eigen mening:
 > Deze graph heb ik ook getest. Deze library is out of the box in de meest uitgeklede variant wel een stuk minder mooi en zit anders in elkaar doordat de view in de code wordt toegevoegd in plaats van de android layout designer. Met onderstaande code kon ik dit mogelijk maken. Dit project heeft eigenlijk geen documentatie, er zijn wel een aantal handleidingen in hoe het te gebruiken is.
 ```java
         XYSeries series = new XYSeries("London Temperature hourly");
@@ -86,20 +86,20 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
         chartLyt.addView(chartView,0);
 ``` 
 3. [WilliamChart](https://github.com/diogobernardino/WilliamChart)
-> ####Pluspunten:
+> Pluspunten:
 > * Aantal verschillende grafieken:
 >> 1. Lijndiagram
 >> 2. Staafdiagram (ook horizontaal en gestapeld.)
 > * Redelijk fancy animaties
 > * Minimalistisch design.
-> ####Minpunten:
+> Minpunten:
 > * Praktisch geen documentatie
 > * Niet veel keuze met grafieken
 > * Geen voorbeelden/ tutorials
-> ####Eigen mening:
+> #### Eigen mening:
 > Deze library ziet er mooi en minimalistisch uit maar als je ook maar iets meer wilt als een lijn of staafdiagram dan kan dat niet. Ik raad deze library dus af, hij is te minimalistisch. 
 4. [HelloCharts android](https://github.com/lecho/hellocharts-android)
-> ####Pluspunten:
+> #### Pluspunten:
 > * Aantal verschillende grafieken:
 >> 1. Lijndiagram (kan met meerdere lijnen)
 >> 2. Gestapelde diagram
@@ -109,6 +109,6 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
 > * Automatische schaling
 > * Zoom en sleep functionaliteitenLine chart(cubic lines, filled lines, scattered points)
 > * Animaties
-> ####Minpunten:
+> #### Minpunten:
 > *
 5. [Androidplot](https://github.com/halfhp/androidplot) 
