@@ -84,6 +84,18 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
         chartLyt.addView(chartView,0);
 ``` 
 3. [WilliamChart](https://github.com/diogobernardino/WilliamChart)
-
+> ####Pluspunten:
+> * Aantal verschillende grafieken:
+>> 1. Lijndiagram
+>> 2. Staafdiagram (ook horizontaal en gestapeld.)
+> * Redelijk fancy animaties
+> * Minimalistisch design.
+> ####Minpunten:
+> * Praktisch geen documentatie
+> * Niet veel keuze met grafieken
+> * Geen voorbeelden/ tutorials
+> ####Eigen mening:
+> Deze library ziet er mooi en minimalistisch uit maar als je ook maar iets meer wilt als een lijn of staafdiagram dan kan dat niet. Ik raad deze library dus af, hij is te minimalistisch. 
 4. [HelloCharts android](https://github.com/lecho/hellocharts-android)
+>
 5. [Androidplot](https://github.com/halfhp/androidplot) 
