@@ -61,10 +61,11 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
 >> 4. Bubbeldiagram
 >> 5. Donutdiagram
 >> 6. Gekombineerd diagram
-> ####Minpunten:
 > * Automatische schaling
 > * Zoom en sleep functionaliteiten
 > * Bischikbaar als gradle dependency
+> ####Minpunten:
+> * Geen documentatie
 > ####Eigen mening:
 > Deze graph heb ik ook getest. Deze library is out of the box in de meest uitgeklede variant wel een stuk minder mooi en zit anders in elkaar doordat de view in de code wordt toegevoegd in plaats van de android layout designer. Met onderstaande code kon ik dit mogelijk maken. Dit project heeft eigenlijk geen documentatie, er zijn wel een aantal handleidingen in hoe het te gebruiken is.
 ```java
@@ -97,5 +98,16 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
 > ####Eigen mening:
 > Deze library ziet er mooi en minimalistisch uit maar als je ook maar iets meer wilt als een lijn of staafdiagram dan kan dat niet. Ik raad deze library dus af, hij is te minimalistisch. 
 4. [HelloCharts android](https://github.com/lecho/hellocharts-android)
->
+> ####Pluspunten:
+> * Aantal verschillende grafieken:
+>> 1. Lijndiagram (kan met meerdere lijnen)
+>> 2. Gestapelde diagram
+>> 3. Circeldiagram
+>> 4. Bubbeldiagram
+>> 6. Gekombineerd diagram
+> * Automatische schaling
+> * Zoom en sleep functionaliteitenLine chart(cubic lines, filled lines, scattered points)
+> * Animaties
+> ####Minpunten:
+> *
 5. [Androidplot](https://github.com/halfhp/androidplot) 

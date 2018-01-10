@@ -20,9 +20,15 @@ In deze repo worden de technology pushes van mij geplubliceerd.
 
 - [Tags View](/Week4/tags_view.md)
 
+- [Android assistant](/Week5/android_assistant.md)
+
+- [Android grafieken](/Week6/android_grafieken.md)
+
 ## Reflecties
 
 - [Week 1](/Week1/reflectie.md)
 - [Week 2](/Week2/reflectie.md)
 - [Week 3](/Week3/reflectie.md)
-- [Week 4](/Week3/reflectie.md)
+- [Week 4](/Week4/reflectie.md)
+- [Week 5](/Week5/reflectie.md)
+- [Week 6](/Week6/reflectie.md)
