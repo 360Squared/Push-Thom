@@ -86,13 +86,13 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
         chartLyt.addView(chartView,0);
 ``` 
 3. [WilliamChart](https://github.com/diogobernardino/WilliamChart)
-> Pluspunten:
+> #### Pluspunten:
 > * Aantal verschillende grafieken:
 >> 1. Lijndiagram
 >> 2. Staafdiagram (ook horizontaal en gestapeld.)
 > * Redelijk fancy animaties
 > * Minimalistisch design.
-> Minpunten:
+> #### Minpunten:
 > * Praktisch geen documentatie
 > * Niet veel keuze met grafieken
 > * Geen voorbeelden/ tutorials
@@ -110,5 +110,61 @@ Hoe kan ik in android het best en netst grafieken maken en tonen?
 > * Zoom en sleep functionaliteitenLine chart(cubic lines, filled lines, scattered points)
 > * Animaties
 > #### Minpunten:
-> *
+> * De meest minimalistische weergave is alleen een lijn. 
+> * Niet heel veel keuze in grafieken
+> #### Eigen mening:
+> Deze library lijkt in gebruik redelijk veel op de MPAndroidChart, maar dan met minder diagrammen en wat minder uitgebreid in de meest simpele versie. De documentatie op deze library is vrij beperkt, er staat wel een simpele uitleg op de hoofdpagina van het github project. Met onderstaande code kan dit gerealiseerd worden. 
+```java
+       List<PointValue> values = new ArrayList<PointValue>();
+        for(int i = 0; i < 25; i++) {
+            values.add(new PointValue(i, r.nextInt(100)));
+        }
+        Line line = new Line(values).setColor(Color.BLUE).setCubic(true);
+        List<Line> lines = new ArrayList<Line>();
+        line.setValues(values);
+
+        lines.add(line);
+        LineChartData data = new LineChartData();
+        data.setLines(lines);
+
+        LineChartView helloChart = findViewById(R.id.chart);
+        helloChart.setLineChartData(data);
+```
+> Dit is een vrij simpele settup waarbij 25 verschillende random punten getoond worden met een kronkelende lijn ertussen. Dit is redelijk vergelijkbaar met MPAndroidChart. Voor simpele grafieken is dit niet moeilijk om te gebruiken.
 5. [Androidplot](https://github.com/halfhp/androidplot) 
+> #### Pluspunten:
+> * Groot aantal verschillende grafieken:
+>> 1. Lijndiagram
+>> 2. Staafdiagram
+>> 3. Puntdiagram
+>> 4. Cirkeldiagram
+>> 5. Stappendiagram
+>> 6. Kandelaardiagram
+>> 7. Bubbeldiagram
+> * Automatische schaling
+> * Zoom en sleep functionaliteitenLine chart(cubic lines, filled lines, scattered points)
+> * Animaties
+> * Demo apps
+> * Documentatie
+> #### Minpunten:
+> * Ziet er ouderwets uit
+> #### Eigen mening:
+> Deze library was iets lastiger om uit te vogelen, er zat in de tutorial veel meer 'troep' dan nodig was. Maar voor de meest basis versie heb ik onderstaande code gebruikt.
+```java
+    XYPlot plot = (XYPlot) findViewById(R.id.plot);
+
+    List<Number> series1Numbers = new ArrayList<Number>();
+    for(int i = 0; i < 25; i++) {
+        series1Numbers.add((float) r.nextInt(100));
+
+    SimpleXYSeries series1 = new SimpleXYSeries(series1Numbers, SimpleXYSeries.ArrayFormat.Y_VALS_ONLY, "Series1");
+
+    LineAndPointFormatter series1Format = new LineAndPointFormatter();
+    plot.addSeries(series1, series1Format);
+
+    plot.getGraph();
+```
+> Om te starten is deze library een beetje onoverzichtelijk (de documentatie ervan) maar na wat onnodige 'troep' weghalen wordt het allemaal wat overzichtelijker en logischer, wat me wel een beetje tegenstaat is het feit dat de achtergrond gelijk zwart wordt en de ruimte onder de lijn gevuld wordt. 
+
+### Conclusie
+> Ik vind de eerste library na dit 'onderzoek' de meest bruikbare, het makkelijkst te implementeren met de meeste opties.
