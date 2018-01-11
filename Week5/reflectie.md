@@ -9,17 +9,24 @@ Beschrijf concrete aspecten van de samenwerking, geef aan in hoeverre je daar te
 
 ### Vorige week
 Wat wilde je vorige week ook alweer verbeteren en in hoeverre is dit gelukt? 
-> Ik wilde de groep meer bij elkaar brengen zodat de samenwerking beter zou gaan. Dit is gelukt door een ipv te doen, dit zorgde ervoor dat de frustaties op een nette manier naar voren kwamen.  
-
+> Ik wilde hierboven een groter aandeel hebben in het ontwikkelen van de prototypes.
+Dit is gelukt door samen met Anne een prototype uit te werken in protopie. Ik vond dit daarom goed geslaagd en heb hier veel van geleerd, vooral hoeveel tijd hier alsnog in gaat zitten. 
 ### Afgelopen week
 
 
 1. Wat ging er afgelopen week goed?
-> Deze week was de eerste echte bouwsprint, wij hebben deze week goed de neuzen dezelfde kant op gestoken en veel meters gemaakt wat betreft prototype en uitwerking(en) daarvan. 
-> Deze week hebben we ook een uitgebreide user-test gedaan, door ons te verspreiden in drie groepen over drie steden (Arnhem, Nijmegen en Utrecht). En wij hebben voor deze test twee prototypes gemaakt in protopie, wij hadden hier een vragenlijst aan gekoppeld en deze vragen gesteld aan winkeleigenaren / managers die tijd hadden. Hier hebben wij veel nuttig resultaat uit gekregen. 
+> Dit was de tweede bouwsprint, waar we vooral prototypen hebben gemaakt en getest. 
+In dit geval het prototype voor de scholieren, hier hebben we weer twee ideeen voor uitgewerkt en deze getest in het winkelcentrum(pje) van presikhaaf. 
+Dit hadden we al op woensdag gedaan. 
+Daarnaast vond ik dat ik goed heb samengewerkt doordat ik geleerd heb hoe ik prototypes in protopie moest maken van mijn groepsgenoten, hiervoor heb ik vooral samengewerkt met Anne. 
+Als ik dan een afbeelding of een deel van een plaatje moest hebben vroeg ik haar of zij dat in een fancy adobe programma kan maken zodat ik dat weer in het prototype kon gebruiken. 
+Ook vond ik het heel fijn dat we veel (positieve) feedback kregen op onze usertests. Dit was een goede afsluiting van het jaar.
+
 
 2. Wat ging er niet goed, waar heb je je aan geërgerd, wat moet er niet meer gebeuren?
-> Ik vond dat ik deze week niet zoveel heb mee gekregen hoe de prototypes gemaakt zijn(ik was misschien iets te druk met mijn technologie push). Ik wil dit volgende weken actief verbeteren door mee te helpen met het maken van deze prototypes. 
+> Doordat ik deze week veel tijd heb besteed aan het maken van prototypes en doordat mijn technologie push deze week niet zo lekker liep. Heb ik maar 1 push kunnen doen, die ook nog eens niet geslaagd was. 
+Ik wilde graag een uitbereiding maken op de google assistant zodat als ik om de licht intensiteit vroeg zij mij kon vertellen hoeveel licht er op het scherm van m'n telefoon viel. 
+Maar dit bleek nog niet zo eenvoudig aangezien ik het niet voor elkaar kreeg om een lokale app als informatie bron voor google assistant te laten dienen. Later heb ik m'n doel naar beneden bijgesteld door te pogen google assistant deze informatie van m'n scherm te laten lezen als er lang op de home knop wordt gedrukt.
 
 3. Wat ga je komende weken proberen te verbeteren?
-> Wat ik hierboven al heb gezet, wil ik graag een groter aandeel hebben in het maken van de prototypes. Daarnaast wil ik wat minder tijd kwijt zijn aan de technology pushes, dit was deze week een beetje uitgelopen.
+> Zoals ik hierboven heb gezet ben ik (te) veel tijd bezig geweest met prototypes maken. Hierdoor hebben ik niet heel veel tijd kunnen besteden aan m'n poc's en daarnaast heb ik met het het pocje redelijk veel hooi op de fork genomen. Dit wil ik volgende week verbeteren door m'n tijd beter te managen. 
