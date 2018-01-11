@@ -5,7 +5,7 @@
 Geef een beschrijving van de test die je gedaan hebt met elk Proof of Concept. Voeg 
  de code ook toe in de map **code**.
  
-### Android StepCounter
+### Android grafieken
 
 * **hypothese:**  
 Hoe kan ik in android het best en netst grafieken maken en tonen?

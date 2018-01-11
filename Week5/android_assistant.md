@@ -4,7 +4,7 @@
 Geef een beschrijving van de test die je gedaan hebt met elk Proof of Concept. Voeg 
  de code ook toe in de map **code**.
  
-### Android StepCounter
+### Android assistant
 
 * **hypothese:**  
 Hoe kan ik informatie verschaffen aan google assistant met een lokale app?

@@ -4,7 +4,7 @@
 Geef een beschrijving van de test die je gedaan hebt met elk Proof of Concept. Voeg 
  de code ook toe in de map **code**.
  
-### Android StepCounter
+### ios tags view
 
 * **hypothese:**  
 Er kwam vanuit de groep een vraag naar een tag systeem zodat wij daar vaardigheden/interresses konden tonen.

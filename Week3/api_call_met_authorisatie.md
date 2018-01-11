@@ -4,7 +4,7 @@
 Geef een beschrijving van de test die je gedaan hebt met elk Proof of Concept. Voeg 
  de code ook toe in de map **code**.
  
-### Android StepCounter
+### API call met authorisatie
 
 * **hypothese:**  
 Hoe kan er een api call gedaan worden met authorisatie. 

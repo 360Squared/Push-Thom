@@ -24,6 +24,8 @@ In deze repo worden de technology pushes van mij geplubliceerd.
 
 - [Android grafieken](/Week6/android_grafieken.md)
 
+- [Android firebase](/Week6/android_firebase.md)
+
 ## Reflecties
 
 - [Week 1](/Week1/reflectie.md)

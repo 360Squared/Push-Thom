@@ -4,7 +4,7 @@
 Geef een beschrijving van de test die je gedaan hebt met elk Proof of Concept. Voeg 
  de code ook toe in de map **code**.
  
-### Android StepCounter
+### ios fancy list
 
 * **hypothese:**  
 Er kwam vanuit de groep een vraag naar een lijst zoals bijvoorbeeld bij de contacten app met de plusjes en minnetjes, zie onderstaand voorbeeld van ons concept. 
