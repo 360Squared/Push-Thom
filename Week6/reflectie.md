@@ -20,7 +20,7 @@ Dit is goed gelukt, ik heb twee leuke proof of concepts kunnen maken en ik heb b
 Door goed bij te houden wat er gedaan moest worden en wie wat aan het doen was heb ik dit proces actief proberen te sturen. 
 Daarnaast heb ik zelf nog twee leuke pocjes gemaakt en dit netjes beschreven en onderzocht. 
 Ook vond ik het samenwerken best goed gaan, ik heb bijvoorbeeld het prototype dat Kilian in Sketch had gemaakt van acties voorzien in Protopie. 
-
+Tijdens het koppelen van de acties kwam ik erachter dat er nog wat dingen verbeterd moesten worden, dit zorgde ervoor dat wij wel moesten samenwerken. 
 
 2. Wat ging er niet goed, waar heb je je aan geërgerd, wat moet er niet meer gebeuren?
 > Ik vond dat deze week erg goed ging, alleen werd de sfeer misschien wat minder. 
