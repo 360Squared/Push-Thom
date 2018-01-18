@@ -9,7 +9,7 @@ Beschrijf concrete aspecten van de samenwerking, geef aan in hoeverre je daar te
 
 ### Vorige week
 Wat wilde je vorige week ook alweer verbeteren en in hoeverre is dit gelukt? 
-> Ik wilde hierboven een groter aandeel hebben in het ontwikkelen van de prototypes.
+> Ik wil een groter aandeel hebben in het ontwikkelen van de prototypes.
 Dit is gelukt door samen met Anne een prototype uit te werken in protopie. Ik vond dit daarom goed geslaagd en heb hier veel van geleerd, vooral hoeveel tijd hier alsnog in gaat zitten. 
 ### Afgelopen week
 
