@@ -1,6 +1,6 @@
 # Technology push Thom Peele
 
-In deze repo worden de technology pushes van mij geplubliceerd.
+In [deze repo](https://github.com/360Squared/Push-Thom) worden de technology pushes van mij geplubliceerd.
 
 - [Android geofencing](/Week1/android_geofencing.md)
 
@@ -25,6 +25,8 @@ In deze repo worden de technology pushes van mij geplubliceerd.
 - [Android grafieken](/Week6/android_grafieken.md)
 
 - [Android firebase](/Week6/android_firebase.md)
+
+----
 
 ## Reflecties
 
